@@ -1,0 +1,30 @@
+1. match (l:League)-[PLAYS_FOR]-(p:Player)-[REPRESENTS]-
+(t:Team)WHERE t.name = "England" and l.name = "Indian Premier
+League" RETURN p.name as PlayerName
+2. match (l:League)-[PLAYS_FOR]-(p:Player)-[REPRESENTS]-
+(t:Team)WHERE t.name = "India" or t.name = "Australia" and
+l.name = "Indian Premier League" RETURN p.name as PlayerName
+3. match (l:League)-[PLAYS_FOR]-(p:Player) WHERE l.name =
+"Indian Premier League" RETURN count(p.name) as
+Number_of_players_playing_IPL
+4. match (l:League)-[PLAYS_FOR]-(p:Player)-[REPRESENTS]-
+(t:Team) WHERE l.name = "Indian Premier League" or l.name =
+"Big Bash League" RETURN p.name as Players
+5. match (l:League)-[PLAYS_FOR]-(p:Player)-[REPRESENTS]-
+(t:Team) WHERE l.name = "Big Bash League" RETURN t.name
+as team
+6. match (l:League)-[PLAYS_FOR]-(p:Player)-[ROLE]-(s:skill)
+WHERE s.name = "Batting" and l.name = "Indian Premier League"
+RETURN p.name as PlayerName
+7. match (l:League)-[PLAYS_FOR]-(p:Player)-[ROLE]-(s:skill)
+WHERE l.name = "Big Bash League" and s.name = "Bowling"
+RETURN p.name as PlayerName
+8. match (l:League)-[PLAYS_FOR]-(p:Player)-[ROLE]-(s:skill)
+WHERE s.name = "Batting" RETURN count(p.name) as
+Batsmancount
+9. match (s:skill)-[ROLE]-(p:Player)-[REPRESENTS]-(t:Team)
+WHERE t.name = "Australia" and s.name = "Batting" or t.name =
+"India" and s.name = "Batting" RETURN p.name as Players
+10. match (l:League)-[PLAYS_FOR]-(p:Player)-[REPRESENTS]-
+(t:Team) WHERE l.name = "Indian Premier League" and t.name =
+"Australia" RETURN p.name as Players
