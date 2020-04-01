@@ -1,0 +1,102 @@
+CREATE (Team1:Team {name:'India'})
+CREATE (Team2:Team {name:'Australia'})
+CREATE (Team3:Team {name:'West Indies'})
+CREATE (Team4:Team {name:'England'})
+CREATE (Player1:Player {name:'Virat', jersey_no:18})
+CREATE (Player2:Player {name:'Rohit', jersey_no:45})
+CREATE (Player3:Player {name:'Jadeja', jersey_no:8})
+CREATE (Player4:Player {name:'Hardik', jersey_no:14})
+CREATE (Player5:Player {name:'Bumrah', jersey_no:54})
+CREATE (Player6:Player {name:'Smith', jersey_no:59})
+CREATE (Player7:Player {name:'Warner', jersey_no:53})
+CREATE (Player8:Player {name:'Maxwell', jersey_no:1})
+CREATE (Player9:Player {name:'Starc', jersey_no:10})
+CREATE (Player10:Player {name:'Hazlewood', jersey_no:11})
+CREATE (Player11:Player {name:'Gayle', jersey_no:333})
+CREATE (Player12:Player {name:'Pollard', jersey_no:89})
+CREATE (Player13:Player {name:'Bravo', jersey_no:81})
+CREATE (Player14:Player {name:'Hetmeyer', jersey_no:17})
+CREATE (Player15:Player {name:'Holder', jersey_no:34})
+CREATE (Player16:Player {name:'Root', jersey_no:66})
+CREATE (Player17:Player {name:'Bairstow', jersey_no:55})
+CREATE (Player18:Player {name:'Butler', jersey_no:90})
+CREATE (Player19:Player {name:'Anderson', jersey_no:20})
+CREATE (Player20:Player {name:'Broad', jersey_no:67})
+CREATE (league1:League {name:'Indian Premier League',
+Host:'India'})
+CREATE (league2:League {name:'Carribian Premier League',
+Host:'West Indies'})
+CREATE (league3:League {name:'Big Bash League',
+Host:'Australia'})
+CREATE (skill1:skill {name:'Batting'})
+CREATE (skill2:skill {name:'Bowling'})
+CREATE
+(Player1)-[:REPRESENTS]->(Team1),
+(Player2)-[:REPRESENTS]->(Team1),
+(Player3)-[:REPRESENTS]->(Team1),
+(Player4)-[:REPRESENTS]->(Team1),
+(Player5)-[:REPRESENTS]->(Team1),
+(Player6)-[:REPRESENTS]->(Team2),
+(Player7)-[:REPRESENTS]->(Team2),
+(Player8)-[:REPRESENTS]->(Team2),
+(Player9)-[:REPRESENTS]->(Team2),
+(Player10)-[:REPRESENTS]->(Team2),
+(Player11)-[:REPRESENTS]->(Team3),
+(Player12)-[:REPRESENTS]->(Team3),
+(Player13)-[:REPRESENTS]->(Team3),
+(Player14)-[:REPRESENTS]->(Team3),
+(Player15)-[:REPRESENTS]->(Team3),
+(Player16)-[:REPRESENTS]->(Team4),
+(Player17)-[:REPRESENTS]->(Team4),
+(Player18)-[:REPRESENTS]->(Team4),
+(Player19)-[:REPRESENTS]->(Team4),
+(Player20)-[:REPRESENTS]->(Team4)
+CREATE
+(Player1)-[:PLAYS_FOR]->(league1),
+(Player2)-[:PLAYS_FOR]->(league1),
+(Player3)-[:PLAYS_FOR]->(league1),
+(Player4)-[:PLAYS_FOR]->(league1),
+(Player5)-[:PLAYS_FOR]->(league1),
+(Player6)-[:PLAYS_FOR]->(league3),
+(Player7)-[:PLAYS_FOR]->(league3),
+(Player8)-[:PLAYS_FOR]->(league3),
+(Player6)-[:PLAYS_FOR]->(league1),
+(Player7)-[:PLAYS_FOR]->(league1),
+(Player8)-[:PLAYS_FOR]->(league1),
+(Player9)-[:PLAYS_FOR]->(league3),
+(Player10)-[:PLAYS_FOR]->(league3),
+(Player11)-[:PLAYS_FOR]->(league2),
+(Player12)-[:PLAYS_FOR]->(league2),
+(Player13)-[:PLAYS_FOR]->(league2),
+(Player14)-[:PLAYS_FOR]->(league2),
+(Player11)-[:PLAYS_FOR]->(league1),
+(Player12)-[:PLAYS_FOR]->(league1),
+(Player13)-[:PLAYS_FOR]->(league1),
+(Player14)-[:PLAYS_FOR]->(league1),
+(Player15)-[:PLAYS_FOR]->(league2),
+(Player16)-[:PLAYS_FOR]->(league2),
+(Player17)-[:PLAYS_FOR]->(league1),
+(Player18)-[:PLAYS_FOR]->(league1),
+(Player19)-[:PLAYS_FOR]->(league3),
+(Player20)-[:PLAYS_FOR]->(league3)
+CREATE
+(Player1)-[:ROLE]->(skill1),
+(Player2)-[:ROLE]->(skill1),
+(Player3)-[:ROLE]->(skill2),
+(Player4)-[:ROLE]->(skill2),
+(Player5)-[:ROLE]->(skill2),
+(Player6)-[:ROLE]->(skill1),
+(Player7)-[:ROLE]->(skill1),
+(Player8)-[:ROLE]->(skill1),
+(Player9)-[:ROLE]->(skill2),
+(Player10)-[:ROLE]->(skill2),
+(Player11)-[:ROLE]->(skill1),
+(Player12)-[:ROLE]->(skill1),
+(Player13)-[:ROLE]->(skill1),
+(Player14)-[:ROLE]->(skill1),
+(Player15)-[:ROLE]->(skill2),
+(Player16)-[:ROLE]->(skill1),
+(Player17)-[:ROLE]->(skill1),
+(Player18)-[:ROLE]->(skill1),
+(Player19)-[:ROLE]->(skill2),
+(Player20)-[:ROLE]->(skill2)
